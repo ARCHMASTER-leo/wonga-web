@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: wonga_postgres
+    environment:
+      POSTGRES_USER: wonga
+      POSTGRES_PASSWORD: wonga123
+      POSTGRES_DB: wonga_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./backend/Wonga.Api
+    container_name: wonga_api
+    ports:
+      - "5030:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=wonga_db;Username=wonga;Password=wonga123
+      - Jwt__Key=SUPER_SECRET_DEVELOPMENT_KEY
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

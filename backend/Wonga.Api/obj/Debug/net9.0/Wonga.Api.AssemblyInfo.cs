@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wonga.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b8f632c58e7151ca8106f5b9a49045e25473082")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f2e782cdf5b2ab6239edad5fed377cbae35ffaf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wonga.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wonga.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
