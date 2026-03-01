@@ -21,7 +21,9 @@ services:
       - "5030:8080"
     environment:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=wonga_db;Username=wonga;Password=wonga123
-      - Jwt__Key=SUPER_SECRET_DEVELOPMENT_KEY
+      - Jwt__Key=SUPER_SECRET_DEVELOPMENT_KEY_12345
+      - Jwt__Issuer=WongaApi
+      - Jwt__Audience=WongaClient
     depends_on:
       - postgres
       
