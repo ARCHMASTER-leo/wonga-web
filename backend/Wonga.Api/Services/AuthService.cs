@@ -57,7 +57,8 @@ public async Task<AuthResponse> LoginAsync(LoginRequest request)
         Id        = user.Id,
         FirstName = user.FirstName,
         LastName  = user.LastName,
-        Email     = user.Email
+        Email     = user.Email,
+        CreatedAt = user.CreatedAt
     };
 }
 
@@ -90,5 +91,5 @@ public async Task<AuthResponse> LoginAsync(LoginRequest request)
 
     return new JwtSecurityTokenHandler().WriteToken(token);
 }
-// ← File ends here. Nothing below this line.
+
 }

@@ -17,4 +17,11 @@ public class User
 
     [Required]
     public string PasswordHash { get; set; } = default!;
+
+    public DateTime CreatedAt {get; set;} = DateTime.UtcNow;
+
+    public DateTime? UpdatedAt { get; set; }
+
+    public string? ResetCode { get; set; }
+public DateTime? ResetCodeExpiry { get; set; }
 }
