@@ -168,7 +168,7 @@ public class AuthWebApplicationFactory : WebApplicationFactory<Program>
         services.Remove(descriptor);
 
     services.AddDbContext<AppDbContext>(options =>
-    options.UseInMemoryDatabase("TestDb")); // ← fixed name, shared per fixture
+    options.UseInMemoryDatabase("TestDb")); 
 });
 
         builder.UseEnvironment("Testing");

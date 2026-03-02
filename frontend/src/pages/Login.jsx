@@ -12,20 +12,24 @@ export default function Login() {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
-    try {
-      const { data } = await api.post('/auth/login', form);
-      sessionStorage.setItem('token', data.token);
-      navigate('/dashboard');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Invalid email or password.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  e.preventDefault();
+  setError('');
+  setLoading(true);
+  try {
+    const { data } = await api.post('/auth/login', form);
+    sessionStorage.setItem('token', data.token);
 
+    // Fetch user after login
+    const { data: user } = await api.get('/auth/me');
+    sessionStorage.setItem('user', JSON.stringify(user));
+
+    navigate('/dashboard');
+  } catch (err) {
+    setError(err.response?.data?.message || 'Invalid email or password.');
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div className="auth-screen">
       <div className="glow glow-top" />
@@ -75,7 +79,7 @@ export default function Login() {
           </div>
 
           <div className="forgot">
-            <a className="link">Forgot password?</a>
+            <Link to="/forgot-password" className="link">Forgot Password</Link>
           </div>
 
           <button className="btn-primary" type="submit" disabled={loading}>

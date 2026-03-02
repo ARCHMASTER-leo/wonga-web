@@ -681,3 +681,175 @@ body {
     padding: 32px 24px;
   }
 }
+
+/* Security Sections */
+.security-section {
+  background: rgb(25, 18, 50);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+
+/* Password Form */
+.password-form {
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+}
+
+.form-group input:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.hint {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Sessions List */
+.sessions-list {
+  margin-top: 1rem;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f8fafc;
+}
+
+.session-item.current-session {
+  background: #f0f9ff;
+  border-color: #3b82f6;
+}
+
+.session-info {
+  flex: 1;
+}
+
+.session-device {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.device-icon {
+  font-size: 1.5rem;
+}
+
+.session-details {
+  margin-left: 2.5rem;
+}
+
+.session-location {
+  display: flex;
+  gap: 1.5rem;
+  color: #475569;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.session-created {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.badge-current {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: #3b82f6;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* Alerts */
+.alert-success {
+  padding: 0.75rem 1rem;
+  background: #d1fae5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.alert-error {
+  padding: 0.75rem 1rem;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-icon {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #64748b;
+  border-radius: 4px;
+}
+
+.btn-icon:hover {
+  background: #f1f5f9;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+}

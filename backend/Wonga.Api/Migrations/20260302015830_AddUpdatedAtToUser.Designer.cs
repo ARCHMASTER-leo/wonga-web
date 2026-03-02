@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Wonga.Api.Data;
@@ -11,9 +12,11 @@ using Wonga.Api.Data;
 namespace Wonga.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260302015830_AddUpdatedAtToUser")]
+    partial class AddUpdatedAtToUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inherit doc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,12 +49,6 @@ namespace Wonga.Api.Migrations
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<string>("ResetCode")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("ResetCodeExpiry")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");

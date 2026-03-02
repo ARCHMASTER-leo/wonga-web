@@ -22,7 +22,7 @@ else
         ));
 }
 
-// ✅ ADD CORS
+// ADD CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
@@ -60,8 +60,8 @@ using (var scope = app.Services.CreateScope())
         db.Database.Migrate();
 }
 
-// ✅ ORDER MATTERS
-app.UseCors("AllowFrontend");   // must be first
+
+app.UseCors("AllowFrontend"); 
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
